@@ -9,5 +9,5 @@ interface CriteriaInterface{
 	 * @param  [type] $object [description]
 	 * @return [type]         [description]
 	 */
-	public static function meets_criteria($object);
+	public static function meets_criteria(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object);
 }

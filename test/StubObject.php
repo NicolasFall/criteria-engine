@@ -9,4 +9,10 @@ class StubObject implements \CriteriaEngine\Interfaces\CriterizableObjectInterfa
 	public function get_value(){
 		return $this->value;
 	}
+
+	public function get_attributes_to_be_evaluated(){
+		return [
+			"value" => $this->value
+		];
+	}
 }

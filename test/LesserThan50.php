@@ -4,13 +4,14 @@ namespace CriteriaEngine\Test;
 use CriteriaEngine\Classes\BaseCriteria as BaseCriteria;
 
 class LesserThan50 extends BaseCriteria{
+
+	protected static $validate = ['value'];
 	/**
-	 * Returns wheter or not the object passed as an argument meets the criteria this
-	 * class implements.
+	 * [meets_criteria_hook description]
 	 * @param  [type] $object [description]
 	 * @return [type]         [description]
 	 */
-	public static function meets_criteria($object){
+	protected static function meets_criteria_hook(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		return $object->get_value() < 50;
 	}
 
@@ -19,7 +20,7 @@ class LesserThan50 extends BaseCriteria{
 		return 0;
 	}
 
-	public static function execute_if_meets_criteria($object){
+	public static function execute_if_meets_criteria(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		if(static::meets_criteria($object)){
 			return static::execute($object);
 		}
