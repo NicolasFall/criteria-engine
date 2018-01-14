@@ -8,10 +8,14 @@ class BaseCriteria implements CriteriaInterface{
 	// Keys of the names of attributes expected to be validated.
 	protected static $validate = [];
 
+	public function __construct(){
+		static::$validate = array_flip(static::$validate);
+	}
+
 	public static function meets_criteria(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		$attr = $object->get_attributes_to_be_evaluated();
 		if(!self::validate_attributes_array_structure($attr)){
-			throw new \Exception("Attributes structure fail.", 1);
+			throw new \Exception("Attributes structure fail. Attirbutes doesn't match attributes needed in {static::class}.", 1);
 		}
 		return static::meets_criteria_hook($object);	
 	}
@@ -26,7 +30,7 @@ class BaseCriteria implements CriteriaInterface{
 	}
 
 	protected static function validate_attributes_array_structure($array){
-		$intersect = array_intersect_key(self::$validate, $array); 
-		return count($intersect) == count(self::$validate); 
+		$intersect = array_intersect_key(static::$validate, $array); 
+		return count($intersect) == count(static::$validate); 
 	}
 }

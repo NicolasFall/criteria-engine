@@ -3,7 +3,7 @@
 namespace CriteriaEngine\Criteria;
 use CriteriaEngine\Classes\BaseCriteria;
 
-class DummyCriteriaName extends CriteriaInterface{
+class DummyCriteriaName extends BaseCriteria{
 
 	public static function meets_criteria_hook(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		// implement the logic of your criteria here.		
