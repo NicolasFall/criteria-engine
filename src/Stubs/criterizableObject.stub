@@ -1,0 +1,14 @@
+<?php
+
+namespace Criteria;
+
+class DummyObjectName implements \CriteriaEngine\Interfaces\CriterizableObjectInterface{
+
+	public function get_attributes_to_be_evaluated(){
+		return [
+			/**
+			 * Expected returned key => value pairs here.
+			 */
+		];
+	}
+}

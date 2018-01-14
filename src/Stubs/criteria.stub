@@ -1,11 +1,17 @@
 <?php
 
-namespace CriteriaEngine\Criteria;
+namespace Criteria;
 use CriteriaEngine\Classes\BaseCriteria;
 
 class DummyCriteriaName extends BaseCriteria{
 
+	/**
+	 * [meets_criteria_hook description]
+	 * @param  \CriteriaEngine\Interfaces\CriterizableObjectInterface $object [description]
+	 * @return boolean true if criteria is meet, false if not.
+	 */
 	public static function meets_criteria_hook(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
-		// implement the logic of your criteria here.		
+		// implement the logic of your criteria here.	
+		return false;	
 	}
 }
