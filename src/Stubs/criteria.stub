@@ -5,7 +5,7 @@ use CriteriaEngine\Classes\BaseCriteria;
 
 class DummyCriteriaName extends CriteriaInterface{
 
-	public static function meets_criteria($object){
+	public static function meets_criteria_hook(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		// implement the logic of your criteria here.		
 	}
 }

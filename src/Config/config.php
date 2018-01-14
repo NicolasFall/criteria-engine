@@ -1,3 +1,5 @@
 <?php
 
-return [];
+return [
+	'criteria_store_path' => 'Criteria'
+];
