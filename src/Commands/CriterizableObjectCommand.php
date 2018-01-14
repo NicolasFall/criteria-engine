@@ -4,14 +4,14 @@ namespace CriteriaEngine\Commands;
 
 use Illuminate\Console\Command;
 
-class CriteriaCommand extends Command
+class CriterizableObjectCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'criteria:criteria {name=Default}';
+    protected $signature = 'criteria:criterizable {name=Default}';
 
     /**
      * The console command description.

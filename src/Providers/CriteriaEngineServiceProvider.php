@@ -22,8 +22,8 @@ class CriteriaEngineServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                \CriteriaEngine\Commands\CriteriaEngineCommand::class,
                 \CriteriaEngine\Commands\CriteriaCommand::class,
+                \CriteriaEngine\Commands\CriterizableObjectCommand::class,
             ]);
         }
     }
