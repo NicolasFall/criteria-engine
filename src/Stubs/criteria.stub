@@ -1,0 +1,11 @@
+<?php
+
+namespace CriteriaEngine\Criteria;
+use CriteriaEngine\Classes\BaseCriteria;
+
+class DummyCriteriaName extends CriteriaInterface{
+
+	public static function meets_criteria($object){
+		// implement the logic of your criteria here.		
+	}
+}

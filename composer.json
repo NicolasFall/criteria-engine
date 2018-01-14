@@ -1,0 +1,28 @@
+{
+    "name": "dandrea-nicolas/criteria-engine",
+    "license": "mit",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "dandrea nicolas",
+            "email": "dandrea.nicolas.ack@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "illuminate/support": "^5.5",
+        "illuminate/console": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "CriteriaEngine\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CriteriaEngine\\Providers\\CriteriaEngineServiceProvider"
+            ]
+        }
+    }
+}
