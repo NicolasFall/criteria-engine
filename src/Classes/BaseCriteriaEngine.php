@@ -14,7 +14,7 @@ class BaseCriteriaEngine implements CriteriaEngineInterface{
 	 * @param  [type] $object [description]
 	 * @return [type]         [description]
 	 */
-	public function meet_first_criteria_on_list($object){
+	public function meet_first_criteria_on_list(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		foreach($this->criteria_class_list as $criteria){
 			if($criteria::meets_criteria($object)){
 				$criteria::execute($object);
@@ -28,7 +28,7 @@ class BaseCriteriaEngine implements CriteriaEngineInterface{
 	 * @param  [type] $object [description]
 	 * @return [type]         [description]
 	 */
-	public function meet_all_criteria_on_list($object){
+	public function meet_all_criteria_on_list(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		foreach($this->criteria_class_list as $criteria){
 			$criteria::execute_if_meets_criteria($object);
 		}		

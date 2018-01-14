@@ -2,7 +2,7 @@
 
 namespace CriteriaEngine\Test;
 
-class StubObject{
+class StubObject implements \CriteriaEngine\Interfaces\CriterizableObjectInterface{
 	public function set_value($val){
 		$this->value = $val;
 	}
