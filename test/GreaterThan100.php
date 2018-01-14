@@ -1,9 +1,9 @@
 <?php
 
-namespace CriteriaEngine\Criteria;
+namespace CriteriaEngine\Test;
 use CriteriaEngine\Classes\BaseCriteria as BaseCriteria;
 
-class ExampleCriteriaBis extends BaseCriteria{
+class GreaterThan100 extends BaseCriteria{
 	/**
 	 * Returns wheter or not the object passed as an argument meets the criteria this
 	 * class implements.
@@ -11,11 +11,11 @@ class ExampleCriteriaBis extends BaseCriteria{
 	 * @return [type]         [description]
 	 */
 	public static function meets_criteria($object){
-		return true;
+		return $object->get_value() > 50;
 	}
 
 	public static function execute($object){
-		echo "ExampleCriteriaBis meeted\n";
+		echo "GreaterTahn100 meeted.\n";
 		return 0;
 	}
 

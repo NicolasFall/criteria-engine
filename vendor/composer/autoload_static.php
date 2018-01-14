@@ -37,6 +37,7 @@ class ComposerStaticInitd57a0df80cc7104f27aafed3f5111d29
         ),
         'C' => 
         array (
+            'CriteriaEngine\\Test\\' => 20,
             'CriteriaEngine\\' => 15,
             'Carbon\\' => 7,
         ),
@@ -86,6 +87,10 @@ class ComposerStaticInitd57a0df80cc7104f27aafed3f5111d29
         'Doctrine\\Common\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector',
+        ),
+        'CriteriaEngine\\Test\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/test',
         ),
         'CriteriaEngine\\' => 
         array (

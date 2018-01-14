@@ -17,6 +17,7 @@ return array(
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),
     'Illuminate\\Console\\' => array($vendorDir . '/illuminate/console'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib/Doctrine/Common/Inflector'),
+    'CriteriaEngine\\Test\\' => array($baseDir . '/test'),
     'CriteriaEngine\\' => array($baseDir . '/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
 );
