@@ -15,7 +15,7 @@ class BaseCriteria implements CriteriaInterface{
 	public static function meets_criteria(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
 		$attr = $object->get_attributes_to_be_evaluated();
 		if(!self::validate_attributes_array_structure($attr)){
-			throw new \Exception("Attributes structure fail. Attirbutes doesn't match attributes needed in {static::class}.", 1);
+			throw new \Exception("Attributes structure fail. Attirbutes doesn't match attributes needed in {get_class}.", 1);
 		}
 		return static::meets_criteria_hook($object);	
 	}
@@ -26,7 +26,7 @@ class BaseCriteria implements CriteriaInterface{
 	 * @return [type]         [description]
 	 */
 	protected static function meets_criteria_hook(\CriteriaEngine\Interfaces\CriterizableObjectInterface $object){
-		throw new \Exception("meets_criteria_hook not redefined.", 1);		
+		throw new \Exception("meets_criteria_hook not redefined in {get_class}.", 1);		
 	}
 
 	protected static function validate_attributes_array_structure($array){

@@ -7,6 +7,6 @@ use CriteriaEngine\Interfaces\CriteriaListRepositoryInterface as CriteriaListRep
 
 class BaseCriteriaListRepository implements CriteriaListRepositoryInterface{
 	public static function get_criteria_list(){
-		throw new Exception("get_criteria_list must be redefined. In {self::class} ", 1);		
+		throw new Exception("get_criteria_list must be redefined. In {get_class} ", 1);		
 	}
 }
