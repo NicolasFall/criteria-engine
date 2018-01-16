@@ -3,15 +3,16 @@
 namespace CriteriaEngine\Commands;
 
 use Illuminate\Console\Command;
-
+use CriteriaEngine\Classes\FileDirectoryTrait;
 class CriteriaCommand extends Command
 {
+    use FileDirectoryTrait;
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'criteria:criteria {name=Default}';
+    protected $signature = 'criteria:criteria {name=Default} {--override}';
 
     /**
      * The console command description.
@@ -37,14 +38,13 @@ class CriteriaCommand extends Command
      */
     public function handle()
     {
-        $className = $this->compose_name($this->argument('name'));
+        $class_name = $this->compose_name($this->argument('name'));
 
         $template = file_get_contents( __dir__ . "/../Stubs/criteria.stub");
 
-        $new_class = str_replace('DummyCriteriaName', $className, $template);
+        $new_class = str_replace('DummyCriteriaName', $class_name, $template);
 
-        $output_file = $this->get_output_file_path($className);
-        file_put_contents($output_file, $new_class);
+        $path = $this->save_new_class_as($new_class,$class_name);
     }
 
     protected function compose_name($name){

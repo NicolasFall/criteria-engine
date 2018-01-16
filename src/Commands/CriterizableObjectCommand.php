@@ -53,24 +53,10 @@ class CriterizableObjectCommand extends Command
     }
 
     protected function get_base_path_string(){
-        return Config('criteria-engine.config.criteria_store_path');
+        return Config('criteria-engine.config.criterizable_objects_store_path','NoExiste');
     }
 
     protected function get_output_file_path($filename){
         return $this->get_base_path_string() . DIRECTORY_SEPARATOR . $filename . '.php';
-    }
-
-    protected function save_new_class_as($new_class, $class_name){
-        $override = $this->option('override');
-
-        $this->create_path_if_doesnt_exist($this->get_base_path_string());
-        $output_file = $this->get_output_file_path($class_name);
-        if(!file_exists($output_file) || (file_exists($output_file) && $override)){
-            file_put_contents($output_file, $new_class);
-            echo "{$class_name} created succesfully. Stored in {root dir}/{$this->get_base_path_string()}."; 
-        }else{
-                echo "{$class_name} already exist on {root dir}/{$this->get_base_path_string()}.\n";
-                echo "You can use --override option to override target class.";
-        }
     }
 }
